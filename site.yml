@@ -15,7 +15,7 @@ cpus: 1
 #
 # Network Settings
 #
-hostname: universitydemoproject
+hostname: universitydemo.project
 ip: 192.168.33.10
 
 #
