@@ -27,6 +27,7 @@ get_header(); ?>
          </div>
      <?php }
     ;?>
+        <?php paginate_links() ;?>
     </div>
 
 <?php get_footer();
