@@ -1,3 +1,4 @@
+<!--This file handle how Home page will be displayed-->
 <?php get_header(); ?>
 
 	<div class="page-banner">
@@ -43,7 +44,7 @@
                 ?>
 
 
-				<p class="t-center no-margin"><a href="<?php echo site_url('/event') ;?>" class="btn btn--blue">View All Events</a></p>
+				<p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event') ;?>" class="btn btn--blue">View All Events</a></p>
 
 			</div>
 		</div>
