@@ -1,3 +1,4 @@
+<!--This file handle how single Event (custom post type) page will be displayed-->
 <?php
 get_header();
 while (have_posts()) {

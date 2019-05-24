@@ -1,3 +1,4 @@
+<!--This file handle how Events page will be displayed-->
 <?php
 get_header(); ?>
 

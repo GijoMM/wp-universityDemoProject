@@ -1,3 +1,4 @@
+<!--This file handle how Blog page will be displayed-->
 <?php
 get_header(); ?>
 

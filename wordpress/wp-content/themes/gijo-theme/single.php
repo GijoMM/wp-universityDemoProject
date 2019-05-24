@@ -1,3 +1,4 @@
+<!--This file handle how any (generic custom post type) page will be displayed-->
 <?php
 get_header();
 while (have_posts()) {
