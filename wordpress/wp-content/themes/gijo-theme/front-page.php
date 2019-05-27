@@ -1,4 +1,4 @@
-<!--This file handle how Home page will be displayed-->
+<!--This file handle how past events page will be displayed-->
 <?php get_header(); ?>
 
 	<div class="page-banner">
