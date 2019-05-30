@@ -1,4 +1,4 @@
-<!--This file handle how single Event (custom post type) page will be displayed-->
+<!--This file handle how single Professor (custom post type) page will be displayed-->
 <?php
 get_header();
 while (have_posts()) {
@@ -15,7 +15,7 @@ while (have_posts()) {
 	</div>
 
 	<div class="container container--narrow page-section">
-		
+
 
 		<div class="generic-content"><?php the_content() ;?></div>
 
@@ -24,7 +24,7 @@ while (have_posts()) {
 
 		if ($relatedPrograms) {
 			echo "<hr class='section-break'>";
-			echo "<h2 class='headline headline--medium'>Related Program(s)</h2>";
+			echo "<h2 class='headline headline--medium'>Subject(s) Taught</h2>";
 			echo "<ul class='link-list min-list'>";
 			foreach ($relatedPrograms as $program) {;?>
 				<li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program) ;?></a></li>
