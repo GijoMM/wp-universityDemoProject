@@ -1,17 +1,14 @@
 <!--This file handle how any page will be displayed-->
 <?php
-get_header ();
-while (have_posts ()) {
-	the_post (); ?>
-    <div class="page-banner">
-        <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-        <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php the_title() ?></h1>
-            <div class="page-banner__intro">
-                <p>DON'T FORGET TO ADD SUBTITLE CUSTOM FIELD</p>
-            </div>
-        </div>
-    </div>
+get_header();
+while (have_posts()) {
+	the_post();
+	pageBanner(array(
+		'title' => '',
+		'subtitle' => '',
+		'photo' => ''
+	));
+	?>
 
     <div class="container container--narrow page-section">
 
