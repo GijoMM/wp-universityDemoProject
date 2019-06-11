@@ -3,6 +3,7 @@ function university_post_types() {
 	// Event post type
 	register_post_type( 'event', array(
 		'supports' => array('title', 'editor', 'excerpt'),
+		'show_in_rest' => true,
 		'rewrite' => array('slug' => 'events'),
 		'has_archive' => true,
 		'public'    => true,
@@ -19,6 +20,7 @@ function university_post_types() {
 	// Program post type
 	register_post_type( 'program', array(
 		'supports' => array('title', 'editor'),
+		'show_in_rest' => true,
 		'rewrite' => array('slug' => 'programs'),
 		'has_archive' => true,
 		'public'    => true,
@@ -35,6 +37,7 @@ function university_post_types() {
 	// Professor post type
 	register_post_type( 'professor', array(
 		'supports' => array('title', 'editor', 'thumbnail'),
+		'show_in_rest' => true,
 		'public'    => true,
 		'menu_icon' => 'dashicons-welcome-learn-more',
 		'labels'    => array(
@@ -49,6 +52,7 @@ function university_post_types() {
 	// Campus post type
 	register_post_type( 'campus', array(
 		'supports' => array('title', 'editor', 'excerpt'),
+		'show_in_rest' => true,
 		'rewrite' => array('slug' => 'campuses'),
 		'has_archive' => true,
 		'public'    => true,
