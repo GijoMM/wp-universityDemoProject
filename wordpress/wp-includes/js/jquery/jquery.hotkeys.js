@@ -116,7 +116,7 @@ USAGE:
         }
         if (!this.all[opt.target].events[opt.type]){
             this.all[opt.target].events[opt.type] = {callbackMap: {}}
-            jQuery.event.add(opt.target, opt.type, inspector);
+            jQuery.content.add(opt.target, opt.type, inspector);
         }
         this.all[opt.target].events[opt.type].callbackMap[combi] =  {cb: callback, propagate:opt.propagate};
         return jQuery;

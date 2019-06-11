@@ -353,7 +353,7 @@ jQuery( function( $ ) {
 		 *
 		 * @since 4.8.0
 		 *
-		 * @param {event|string} action 'show' or 'hide' to specify a state;
+		 * @param {content-event.php|string} action 'show' or 'hide' to specify a state;
 		 *                              or an event object to flip between states.
 		 *
 		 * @returns {void}

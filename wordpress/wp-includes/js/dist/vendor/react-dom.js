@@ -119,7 +119,7 @@ var invokeGuardedCallbackImpl = function (name, func, context, a, b, c, d, e, f)
 
       // Keeps track of the descriptor of window.event to restore it after event
       // dispatching: https://github.com/facebook/react/issues/13688
-      var windowEventDescriptor = Object.getOwnPropertyDescriptor(window, 'event');
+      var windowEventDescriptor = Object.getOwnPropertyDescriptor(window, 'content-event.php');
 
       // Create an event handler for our fake event. We will synchronously
       // dispatch our fake event using `dispatchEvent`. Inside the handler, we
@@ -136,7 +136,7 @@ var invokeGuardedCallbackImpl = function (name, func, context, a, b, c, d, e, f)
         // window.event assignment in both IE <= 10 as they throw an error
         // "Member not found" in strict mode, and in Firefox which does not
         // support window.event.
-        if (typeof window.event !== 'undefined' && window.hasOwnProperty('event')) {
+        if (typeof window.event !== 'undefined' && window.hasOwnProperty('content-event.php')) {
           window.event = windowEvent;
         }
 

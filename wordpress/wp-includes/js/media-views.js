@@ -5432,8 +5432,8 @@ Select = Toolbar.extend(/** @lends wp.media.view.Toolbar.Select.prototype */{
 			controller.close();
 		}
 
-		if ( options.event ) {
-			controller.state().trigger( options.event );
+		if ( options.content ) {
+			controller.state().trigger( options.content );
 		}
 
 		if ( options.state ) {

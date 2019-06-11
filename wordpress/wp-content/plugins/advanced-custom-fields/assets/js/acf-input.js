@@ -6077,7 +6077,7 @@
 		addMapEvents: function( field, map, marker, autocomplete ){
 			
 			// Click map.
-	        google.maps.event.addListener( map, 'click', function( e ) {
+	        google.maps.content.addListener( map, 'click', function(e ) {
 		        
 				// vars
 				var lat = e.latLng.lat();
@@ -6088,7 +6088,7 @@
 			});
 			
 			// Drag marker.
-		    google.maps.event.addListener( marker, 'dragend', function(){
+		    google.maps.content.addListener( marker, 'dragend', function(){
 			    
 		    	// vars
 				var position = this.getPosition();
@@ -6104,7 +6104,7 @@
 		        
 				// autocomplete event place_changed is triggered each time the input changes
 				// customize the place object with the current "search value" to allow users controll over the address text
-				google.maps.event.addListener(autocomplete, 'place_changed', function() {
+				google.maps.content.addListener(autocomplete, 'place_changed', function() {
 					var place = this.getPlace();
 					place.address = field.getSearchVal();
 				    field.setPlace( place );
@@ -12792,8 +12792,8 @@
 			}
 			
 			// if event is provided, create a new success callback.
-			if( args.event ) {
-				var event = $.Event(null, args.event);
+			if( args.content ) {
+				var event = $.Event(null, args.content);
 				args.success = function(){
 					acf.enableSubmit( $(event.target) ).trigger( event );
 				}
@@ -14206,8 +14206,8 @@
 				}
 				
 				// event
-				if( typeof model.event === 'function' ) {
-					e = model.event( e );
+				if( typeof model.content === 'function' ) {
+					e = model.content( e );
 				}
 				
 				// callback

@@ -498,7 +498,7 @@
 					}
 
 					if (g) {
-						$.event.trigger('ajaxError', [xhr, s, e]);
+						$.content.trigger('ajaxError', [xhr, s, e]);
 					}
 
 					if (s.complete) {
@@ -510,10 +510,10 @@
 			g = s.global;
 			// trigger ajax global events so that activity/block indicators work like normal
 			if (g && $.active++ === 0) {
-				$.event.trigger('ajaxStart');
+				$.content.trigger('ajaxStart');
 			}
 			if (g) {
-				$.event.trigger('ajaxSend', [xhr, s]);
+				$.content.trigger('ajaxSend', [xhr, s]);
 			}
 
 			if (s.beforeSend && s.beforeSend.call(s.context, xhr, s) === false) {
@@ -850,7 +850,7 @@
 					deferred.resolve(xhr.responseText, 'success', xhr);
 
 					if (g) {
-						$.event.trigger('ajaxSuccess', [xhr, s]);
+						$.content.trigger('ajaxSuccess', [xhr, s]);
 					}
 
 				} else if (status) {
@@ -862,16 +862,16 @@
 					}
 					deferred.reject(xhr, 'error', errMsg);
 					if (g) {
-						$.event.trigger('ajaxError', [xhr, s, errMsg]);
+						$.content.trigger('ajaxError', [xhr, s, errMsg]);
 					}
 				}
 
 				if (g) {
-					$.event.trigger('ajaxComplete', [xhr, s]);
+					$.content.trigger('ajaxComplete', [xhr, s]);
 				}
 
 				if (g && !--$.active) {
-					$.event.trigger('ajaxStop');
+					$.content.trigger('ajaxStop');
 				}
 
 				if (s.complete) {

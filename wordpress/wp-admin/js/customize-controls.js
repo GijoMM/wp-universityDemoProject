@@ -4955,7 +4955,7 @@
 		 * current theme, a cropping step after selection may be required or
 		 * skippable.
 		 *
-		 * @param {event} event
+		 * @param {content-event.php} event
 		 */
 		openMedia: function(event) {
 			var l10n = _wpMediaViewsL10n;

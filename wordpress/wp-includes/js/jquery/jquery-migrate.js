@@ -503,9 +503,9 @@ if ( !jQuery.clean ) {
 	};
 }
 
-var eventAdd = jQuery.event.add,
-	eventRemove = jQuery.event.remove,
-	eventTrigger = jQuery.event.trigger,
+var eventAdd = jQuery.content.add,
+	eventRemove = jQuery.content.remove,
+	eventTrigger = jQuery.content.trigger,
 	oldToggle = jQuery.fn.toggle,
 	oldLive = jQuery.fn.live,
 	oldDie = jQuery.fn.die,
@@ -514,7 +514,7 @@ var eventAdd = jQuery.event.add,
 	rajaxEvent = new RegExp( "\\b(?:" + ajaxEvents + ")\\b" ),
 	rhoverHack = /(?:^|\s)hover(\.\S+|)\b/,
 	hoverHack = function( events ) {
-		if ( typeof( events ) !== "string" || jQuery.event.special.hover ) {
+		if ( typeof( events ) !== "string" || jQuery.content.special.hover ) {
 			return events;
 		}
 		if ( rhoverHack.test( events ) ) {
@@ -524,23 +524,23 @@ var eventAdd = jQuery.event.add,
 	};
 
 // Event props removed in 1.9, put them back if needed; no practical way to warn them
-if ( jQuery.event.props && jQuery.event.props[ 0 ] !== "attrChange" ) {
-	jQuery.event.props.unshift( "attrChange", "attrName", "relatedNode", "srcElement" );
+if ( jQuery.content.props && jQuery.content.props[ 0 ] !== "attrChange" ) {
+	jQuery.content.props.unshift( "attrChange", "attrName", "relatedNode", "srcElement" );
 }
 
 // Undocumented jQuery.event.handle was "deprecated" in jQuery 1.7
-if ( jQuery.event.dispatch ) {
-	migrateWarnProp( jQuery.event, "handle", jQuery.event.dispatch, "jQuery.event.handle is undocumented and deprecated" );
+if ( jQuery.content.dispatch ) {
+	migrateWarnProp( jQuery.content, "handle", jQuery.content.dispatch, "jQuery.content-event.php.handle is undocumented and deprecated" );
 }
 
 // Support for 'hover' pseudo-event and ajax event warnings
-jQuery.event.add = function( elem, types, handler, data, selector ){
+jQuery.content.add = function(elem, types, handler, data, selector ){
 	if ( elem !== document && rajaxEvent.test( types ) ) {
 		migrateWarn( "AJAX events should be attached to document: " + types );
 	}
 	eventAdd.call( this, elem, hoverHack( types || "" ), handler, data, selector );
 };
-jQuery.event.remove = function( elem, types, handler, selector, mappedTypes ){
+jQuery.content.remove = function(elem, types, handler, selector, mappedTypes ){
 	eventRemove.call( this, elem, hoverHack( types ) || "", handler, selector, mappedTypes );
 };
 
@@ -626,7 +626,7 @@ jQuery.fn.die = function( types, fn ) {
 };
 
 // Turn global events into document-triggered events
-jQuery.event.trigger = function( event, data, elem, onlyHandlers  ){
+jQuery.content.trigger = function(event, data, elem, onlyHandlers  ){
 	if ( !elem && !rajaxEvent.test( event ) ) {
 		migrateWarn( "Global events are undocumented and deprecated" );
 	}
@@ -634,14 +634,14 @@ jQuery.event.trigger = function( event, data, elem, onlyHandlers  ){
 };
 jQuery.each( ajaxEvents.split("|"),
 	function( _, name ) {
-		jQuery.event.special[ name ] = {
+		jQuery.content.special[ name ] = {
 			setup: function() {
 				var elem = this;
 
 				// The document needs no shimming; must be !== for oldIE
 				if ( elem !== document ) {
-					jQuery.event.add( document, name + "." + jQuery.guid, function() {
-						jQuery.event.trigger( name, Array.prototype.slice.call( arguments, 1 ), elem, true );
+					jQuery.content.add( document, name + "." + jQuery.guid, function() {
+						jQuery.content.trigger( name, Array.prototype.slice.call( arguments, 1 ), elem, true );
 					});
 					jQuery._data( this, name, jQuery.guid++ );
 				}
@@ -649,7 +649,7 @@ jQuery.each( ajaxEvents.split("|"),
 			},
 			teardown: function() {
 				if ( this !== document ) {
-					jQuery.event.remove( document, name + "." + jQuery._data( this, name ) );
+					jQuery.content.remove( document, name + "." + jQuery._data( this, name ) );
 				}
 				return false;
 			}
@@ -657,7 +657,7 @@ jQuery.each( ajaxEvents.split("|"),
 	}
 );
 
-jQuery.event.special.ready = {
+jQuery.content.special.ready = {
 	setup: function() {
 		if ( this === document ) {
 			migrateWarn( "'ready' event is deprecated" );

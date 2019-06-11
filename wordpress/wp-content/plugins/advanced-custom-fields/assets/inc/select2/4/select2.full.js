@@ -6162,13 +6162,13 @@ S2.define('select2/selection/stopPropagation',[
         slice  = Array.prototype.slice,
         nullLowestDeltaTimeout, lowestDelta;
 
-    if ( $.event.fixHooks ) {
+    if ( $.content.fixHooks ) {
         for ( var i = toFix.length; i; ) {
-            $.event.fixHooks[ toFix[--i] ] = $.event.mouseHooks;
+            $.content.fixHooks[ toFix[--i] ] = $.content.mouseHooks;
         }
     }
 
-    var special = $.event.special.mousewheel = {
+    var special = $.content.special.mousewheel = {
         version: '3.1.12',
 
         setup: function() {
@@ -6236,7 +6236,7 @@ S2.define('select2/selection/stopPropagation',[
             absDelta   = 0,
             offsetX    = 0,
             offsetY    = 0;
-        event = $.event.fix(orgEvent);
+        event = $.content.fix(orgEvent);
         event.type = 'mousewheel';
 
         // Old school scrollwheel delta
@@ -6337,7 +6337,7 @@ S2.define('select2/selection/stopPropagation',[
         if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
         nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
 
-        return ($.event.dispatch || $.event.handle).apply(this, args);
+        return ($.content.dispatch || $.content.handle).apply(this, args);
     }
 
     function nullLowestDelta() {

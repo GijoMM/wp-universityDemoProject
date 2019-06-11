@@ -166,7 +166,7 @@
 		 *
 		 * @since 4.0.0
 		 *
-		 * @param {event} event The TinyMCE editor init event.
+		 * @param {content-event.php} event The TinyMCE editor init event.
 		 * @param {object} editor The editor to bind the vents on.
 		 *
 		 * @returns {void}
@@ -239,7 +239,7 @@
 			 *
 			 * @since 4.0.0
 			 *
-			 * @param {event} event The event to get the key code from.
+			 * @param {content-event.php} event The event to get the key code from.
 			 *
 			 * @returns {void}
 			 */
@@ -329,7 +329,7 @@
 			 *
 			 * @since 4.1.0
 			 *
-			 * @param {event} event The FullscreenStateChanged event.
+			 * @param {content-event.php} event The FullscreenStateChanged event.
 			 *
 			 * @returns {void}
 			 */
@@ -458,7 +458,7 @@
 		 *
 		 * @since 4.0.0
 		 *
-		 * @param {event} event The event that calls this function.
+		 * @param {content-event.php} event The event that calls this function.
 		 *
 		 * @returns {void}
 		 */
@@ -1440,7 +1440,7 @@
 		 *
 		 * @since 4.1.0
 		 *
-		 * @param {event} event The event to trigger the toggle.
+		 * @param {content-event.php} event The event to trigger the toggle.
 		 *
 		 * @returns {void}
 		 */
@@ -1459,7 +1459,7 @@
 		 *
 		 * @since 4.1.0
 		 *
-		 * @param {event} event The TinyMCE editor setup event.
+		 * @param {content-event.php} event The TinyMCE editor setup event.
 		 * @param {object} editor The editor to add the button to.
 		 *
 		 * @returns {void}
@@ -1508,7 +1508,7 @@
 		 *
 		 * @since 4.1.0
 		 *
-		 * @param {event} event The TinyMCE editor init event.
+		 * @param {content-event.php} event The TinyMCE editor init event.
 		 * @param {object} editor The editor to bind events on.
 		 *
 		 * @returns {void}
@@ -1565,7 +1565,7 @@
 		 *
 		 * @since 4.1.0
 		 *
-		 * @param {event} event The quicktags init event.
+		 * @param {content-event.php} event The quicktags init event.
 		 * @param {object} editor The editor to bind events on.
 		 *
 		 * @returns {void}

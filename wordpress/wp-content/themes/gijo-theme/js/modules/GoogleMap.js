@@ -60,7 +60,7 @@ class GMap {
       });
 
       // show info window when marker is clicked
-      google.maps.event.addListener(marker, 'click', function() {
+      google.maps.content.addListener(marker, 'click', function() {
 
         infowindow.open( map, marker );
 
