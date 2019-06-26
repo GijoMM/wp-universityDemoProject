@@ -1,6 +1,6 @@
 # wp-universityDemoProject
 
-This is my repo with my WordPress Udemy course project of a fictional university.
+This is my repo with my project of a fictional university website from a WordPress Udemy course.
 On this project I'm learning how to:
 
 - write PHP to manipulate the data of a WordPress site;
