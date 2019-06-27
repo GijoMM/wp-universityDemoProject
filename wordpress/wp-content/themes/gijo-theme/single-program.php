@@ -77,19 +77,22 @@ while (have_posts()) {
 		));
 
 		if ($homepageEvents->have_posts()) {
-			echo '<hr class="section-break">';
-			echo "<h2 class='headline headline--medium'>Upcoming " . get_the_title() . " Events </h2>";
+			echo '<hr class="section-break"><hr>';
+			echo '<h2 class="headline headline--medium">Upcoming ' . get_the_title() . ' Events </h2>';
 
 			while($homepageEvents->have_posts()) {
 				$homepageEvents->the_post();
 				get_template_part('template-parts/content', 'event');
 			} wp_reset_postdata();
         }
-
+		wp_reset_postdata();
+        $relatedCampuses = get_field('related_campuses');
+        if($relatedCampuses) {
+            echo '<h2 class="headline headline--medium">' . get_the_title() . ' is available at  these campuses:</h2>';
+        }
 		?>
 
 	</div>
-	<hr>
 <?php }
 get_footer();
 
