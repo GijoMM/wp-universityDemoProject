@@ -21,17 +21,15 @@ while (have_posts()) {
 
 		<div class="container container--narrow page-section">
 
+			<?php
+				$mapLocation =get_field('location')
+			;?>
+
 			<div class="acf-map">
-				<?php
-				while (have_posts()) {
-				the_post();
-				$mapLocation = get_field('location');
-				?>
 				<div class="marker" data-lat="<?php echo $mapLocation['lat'] ?>" data-lng="<?php echo $mapLocation['lng']; ?>"></div>
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<h3><?php the_title(); ?></h3>
 				<?php echo $mapLocation['address']; ?>
 			</div>
-			<?php }?>
 		</div>
 
 		<?php
