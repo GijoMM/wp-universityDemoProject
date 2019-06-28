@@ -19,18 +19,11 @@ while (have_posts()) {
 
 		<div class="generic-content"><?php the_content() ;?></div>
 
-		<div class="container container--narrow page-section">
-
-			<?php
-				$mapLocation =get_field('location')
-			;?>
-
-			<div class="acf-map">
-				<div class="marker" data-lat="<?php echo $mapLocation['lat'] ?>" data-lng="<?php echo $mapLocation['lng']; ?>"></div>
-				<h3><?php the_title(); ?></h3>
-				<?php echo $mapLocation['address']; ?>
-			</div>
-		</div>
+        <div class="container container--narrow page-section">
+            <ul class="link-list min-list">
+					<?php the_field('location');  ?>
+            </ul>
+        </div>
 
 		<?php
 
